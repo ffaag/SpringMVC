@@ -1,0 +1,8 @@
+# Project exclude paths
+/SpringMVC_demo1/target/
+/SpringMVC_demo2/target/
+/SpringMVC_demo3/target/
+/SpringMVC_demo4/target/
+/SpringMVC_demo4_RESTFUL/target/
+/SpringMVC_demo5/target/
+/SpringMVC_demo5_annotation/target/

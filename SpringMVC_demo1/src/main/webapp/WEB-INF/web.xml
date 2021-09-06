@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--配置SpringMVC的前端控制器DispatcherServlet，对浏览器发送的请求进行统一处理-->
+
+
+    <!--1、默认配置方式，不好用，位置默认，名称默认
+    此配置作用下，SpringMVC的配置文件默认位于WEB-INF下，默认名称为<servlet-name>-servlet.xml
+    例如，以下配置所对应SpringMVC的配置文件位于WEB-INF下，文件名为springMVC-servlet.xml
+    <servlet>
+        <servlet-name>SpringMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SpringMVC</servlet-name>
+        <url-pattern>/</url-pattern>  /可以匹配.html，.js，.css，不能匹配.jsp
+    </servlet-mapping>-->
+
+
+    <!--2、扩展配置方式
+    可通过init-param标签设置SpringMVC配置文件的位置和名称，通过load-on-startup标签设置
+    SpringMVC前端控制器DispatcherServlet的初始化时间-->
+    <servlet>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--配置SpringMVC配置文件的位置和名称-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springMVC.xml</param-value>
+        </init-param>
+        <!--作为框架的核心组件，在启动过程中有大量的初始化操作要做
+            而这些操作放在第一次请求时才执行会严重影响访问速度
+            因此需要通过此标签将启动控制DispatcherServlet的初始化时间提前到服务器启动时-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>  <!--/可以匹配.html，.js，.css，不能匹配.jsp-->
+    </servlet-mapping>
+
+
+</web-app>

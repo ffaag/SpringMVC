@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>HelloWorld</h1></br>
+    <a th:href="@{/test/testRequestMapping}">访问sucess</a></br>
+    <a th:href="@{/test/test1}">访问sucess1</a></br>
+    <a th:href="@{/test/test2}">访问sucess2</a></br>
+
+    <form th:action="@{/test/test3}" method="post">
+        <input type="submit" value="测试method属性的post">
+    </form>
+
+    </br>
+
+
+    <!--Thymeleaf写参数的格式，字符串用单引号引起来-->
+    <form th:action="@{/test/testPut(username='admin', password=123)}" method="put">
+        <input type="submit" value="测试method属性的put">
+    </form>
+
+    </br>
+    <a th:href="@{/test/a/testAnt}">Ant风格使用?, *, **</a>
+
+    </br>
+    <a th:href="@{/test/testPath/1/admin}">测试占位符，即在地址路径中加入参数，像地址这样用斜线隔开</a>
+
+</body>
+</html>

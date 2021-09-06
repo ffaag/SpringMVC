@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="fhbgmnfbx:war">
+    <output-path>$PROJECT_DIR$/fhbgmnfbx/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>fhbgmnfbx</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="fhbgmnfbx-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="fhbgmnfbx:war exploded" />
+    </root>
+  </artifact>
+</component>

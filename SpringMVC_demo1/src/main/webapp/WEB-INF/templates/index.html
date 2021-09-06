@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <p>159357258456</p>
+    <!--以“/”开头的路径，称为绝对路径。分两种
+    服务器端解析"/",代表当前web应用的路径，即：http://localhost:8080/工程名/
+    这里可以直接映射到/webapp
+    以下两种路径由服务器解析
+    web.xml中的"/"
+    request.getRequestDispatcher().forward(request, response);请求转发中的"/"
+    浏览器端解析"/",代表 当前服务器的路径，即：http://localhost:8080/
+    以下两种路径由浏览器解析
+    .html页面中的"/",如：action、src、href中的"/"
+    response.sendRedirect();重定向中的"/"-->
+
+
+    <!--这里通过thymeleaf解析路径，首先加上th:然后后面加上@{里面写那个文件地址}-->
+    <a th:href="@{/target}">访问目标页面</a>
+</body>
+</html>
